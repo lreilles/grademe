@@ -1,0 +1,89 @@
+----------------8<-------------[ START TEST 
+        🔎 YOUR OUTPUT:
+microshell/microshell.c: In function 'ft_strlen':
+microshell/microshell.c:7:9: error: `i\U0000037e' is not in NFC [-Werror=normalized=]
+    7 |  return i;
+      |         ^
+microshell/microshell.c:7:9: error: 'i\U0000037e' undeclared (first use in this function)
+    7 |  return i;
+      |         ^~
+microshell/microshell.c:7:9: note: each undeclared identifier is reported only once for each function it appears in
+microshell/microshell.c:7:12: error: expected ';' before '}' token
+    7 |  return i;
+      |           ^
+      |           ;
+    8 | }
+      | ~          
+microshell/microshell.c: In function 'ft_error':
+microshell/microshell.c:12:2: error: implicit declaration of function 'write' [-Werror=implicit-function-declaration]
+   12 |  write(2, str, ft_strlen(str));
+      |  ^~~~~
+microshell/microshell.c: In function 'ft_exec':
+microshell/microshell.c:20:10: error: 'NULL' undeclared (first use in this function)
+   20 |  av[i] = NULL;
+      |          ^~~~
+microshell/microshell.c:1:1: note: 'NULL' is defined in header '<stddef.h>'; did you forget to '#include <stddef.h>'?
+  +++ |+#include <stddef.h>
+    1 | 
+microshell/microshell.c:21:2: error: implicit declaration of function 'dup2' [-Werror=implicit-function-declaration]
+   21 |  dup2(tmp_fd, STDIN_FILENO);
+      |  ^~~~
+microshell/microshell.c:21:15: error: 'STDIN_FILENO' undeclared (first use in this function)
+   21 |  dup2(tmp_fd, STDIN_FILENO);
+      |               ^~~~~~~~~~~~
+microshell/microshell.c:22:2: error: implicit declaration of function 'close' [-Werror=implicit-function-declaration]
+   22 |  close(tmp_fd);
+      |  ^~~~~
+microshell/microshell.c:23:2: error: implicit declaration of function 'execve' [-Werror=implicit-function-declaration]
+   23 |  execve(av[0], av, env);
+      |  ^~~~~~
+microshell/microshell.c:25:2: error: implicit declaration of function 'exit' [-Werror=implicit-function-declaration]
+   25 |  exit(1);
+      |  ^~~~
+microshell/microshell.c:25:2: error: incompatible implicit declaration of built-in function 'exit' [-Werror]
+microshell/microshell.c:1:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+  +++ |+#include <stdlib.h>
+    1 | 
+microshell/microshell.c: In function 'main':
+microshell/microshell.c:31:15: error: implicit declaration of function 'dup' [-Werror=implicit-function-declaration]
+   31 |  int tmp_fd = dup(STDIN_FILENO);
+      |               ^~~
+microshell/microshell.c:31:19: error: 'STDIN_FILENO' undeclared (first use in this function)
+   31 |  int tmp_fd = dup(STDIN_FILENO);
+      |                   ^~~~~~~~~~~~
+microshell/microshell.c:40:19: error: implicit declaration of function 'strcmp' [-Werror=implicit-function-declaration]
+   40 |   while (av[i] && strcmp(av[i], "|" ) && strcmp(av[i], ";"))
+      |                   ^~~~~~
+microshell/microshell.c:45:23: error: 'NULL' undeclared (first use in this function)
+   45 |     ft_error("error", NULL);
+      |                       ^~~~
+microshell/microshell.c:45:23: note: 'NULL' is defined in header '<stddef.h>'; did you forget to '#include <stddef.h>'?
+microshell/microshell.c:46:13: error: implicit declaration of function 'chdir' [-Werror=implicit-function-declaration]
+   46 |    else if (chdir(av[1]) != 0)
+      |             ^~~~~
+microshell/microshell.c:51:9: error: implicit declaration of function 'fork' [-Werror=implicit-function-declaration]
+   51 |    if ( fork() == 0)
+      |         ^~~~
+microshell/microshell.c:58:12: error: implicit declaration of function 'waitpid' [-Werror=implicit-function-declaration]
+   58 |     while (waitpid(-1, NULL, WUNTRACED) != -1);
+      |            ^~~~~~~
+microshell/microshell.c:58:30: error: 'WUNTRACED' undeclared (first use in this function)
+   58 |     while (waitpid(-1, NULL, WUNTRACED) != -1);
+      |                              ^~~~~~~~~
+microshell/microshell.c:64:10: error: implicit declaration of function 'pipe' [-Werror=implicit-function-declaration]
+   64 |    blk = pipe(pipe_fd);
+      |          ^~~~
+microshell/microshell.c:67:22: error: 'STDOUT_FILENO' undeclared (first use in this function)
+   67 |     dup2(pipe_fd[1], STDOUT_FILENO);
+      |                      ^~~~~~~~~~~~~
+microshell/microshell.c:33:6: error: variable 'blk' set but not used [-Werror=unused-but-set-variable]
+   33 |  int blk;
+      |      ^~~
+microshell/microshell.c: In function 'ft_strlen':
+microshell/microshell.c:8:1: error: control reaches end of non-void function [-Werror=return-type]
+    8 | }
+      | ^
+cc1: all warnings being treated as errors
+
+        ❌ COMPILATION ERROR
+----------------8<------------- END TEST ]
